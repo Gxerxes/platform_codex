@@ -2,6 +2,7 @@ HELP.md
 .gradle/
 build/
 out/
+bin/
 *.iml
 .idea/
 .vscode/

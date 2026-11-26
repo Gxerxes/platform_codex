@@ -5,3 +5,6 @@ management:
   endpoint:
     health:
       show-details: when-authorized
+
+palette:
+  application-name: ${PALETTE_APPLICATION_NAME:palette-bff-dev}

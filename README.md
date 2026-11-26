@@ -7,9 +7,9 @@ Palette 是面向 HKEX PTS 部门内部业务开发团队的企业级应用开�
 
 ## 当前阶段
 
-当前处于 **Step 1 — Project Initialization**，已初始化 Java 21、Spring Boot 3、Gradle Kotlin DSL 项目骨架。
+当前处于 **Step 2 — Application Foundation**，已完成配置校验、RFC 7807 错误响应、关联 ID 和请求日志。
 
-> Step 1 已完成：项目可编译、测试、打包并启动。认证、Session 和下游集成从 Step 2 开始按流程实施。
+> Step 2 已完成：配置属性、标准错误、Correlation ID 与请求耗时日志可验证。认证、Session、OAuth/OIDC 和下游集成尚未实现。
 
 ## 文档导航
 

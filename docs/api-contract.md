@@ -26,17 +26,22 @@
 
 生产暴露范围需在安全配置中确认。
 
-## 标准错误响应（后续实现）
+## 标准错误响应（Step 2 已实现）
+
+服务端使用 `application/problem+json`，并携带关联 ID：
 
 ```json
 {
-  "type": "https://palette.example/problems/forbidden",
-  "title": "Forbidden",
-  "status": 403,
-  "detail": "当前用户无访问权限",
-  "correlationId": "配置或请求生成的关联 ID"
+  "type": "about:blank",
+  "title": "Not Found",
+  "status": 404,
+  "detail": "The requested resource was not found.",
+  "instance": "/api/not-found",
+  "correlationId": "请求提供或系统生成的关联 ID"
 }
 ```
+
+每个响应也会包含 `X-Correlation-ID` 响应头。客户端提供的安全关联 ID 会原样保留，否则服务端生成 UUID。
 
 ## 候选认证接口
 
