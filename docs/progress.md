@@ -2,34 +2,31 @@
 
 ## 当前阶段
 
-**Step 3 — Spring Security Foundation**
+**Step 4 — OAuth2 & OIDC Integration**
 
-状态：已完成安全过滤链、401/403、CSRF、CORS 与安全响应头实现，等待提交与下一阶段确认。
+状态：已完成 OAuth2/OIDC 客户端配置骨架、用户与权限映射、登录成功失败处理及 Mock 测试，等待提交与下一阶段确认。
 
-## Step 3 已完成
+## Step 4 已完成
 
-- 添加 Spring Security 依赖及 Security Test 支持。
-- 配置 Spring Security 6 `SecurityFilterChain`。
-- 将 Hello 和 Actuator health 设为公开端点。
-- 将受保护与管理员端点分别要求认证和 `ROLE_ADMIN`。
-- 实现 RFC 7807 风格 `401` 与 `403` 响应入口。
-- 配置 CORS 来源、方法、Header 和凭据策略。
-- 启用 CSRF 防护并仅豁免只读健康探针。
-- 配置 Frame、Content-Type 和安全响应头。
-- 添加公开、受保护、管理员、CSRF、CORS 和安全头测试。
+- 添加 `spring-boot-starter-oauth2-client`。
+- 添加独立的 `oauth2` Profile 与企业 Keycloak 配置占位。
+- 使用显式授权、令牌、用户信息和 JWK 端点，不依赖未确认 Issuer discovery。
+- 保证真实凭据只通过环境变量或外部配置提供，不提交仓库。
+- 添加 OIDC 登录成功与失败处理器。
+- 添加 OIDC 用户信息映射和 Keycloak Realm Role 映射。
+- 添加脱敏的 `/api/auth/session` 身份状态接口骨架。
+- 添加 Mock OIDC 用户、Realm Role 与 OAuth2 Profile 上下文测试。
 
-## Step 3 验证结果
+## Step 4 验证结果
 
-- `./gradlew clean build test check bootJar`：成功。
-- `./gradlew bootRun`：启动成功。
-- `/api/hello`：公开访问，返回 `200`。
-- `/actuator/health`：公开访问，返回 `UP`。
-- `/api/protected/session` 未认证访问：返回 `401 application/problem+json`。
-- 管理员与普通认证测试：分别验证通过和拒绝。
-- 安全头和关联 ID 可在运行时观察。
+- `./gradlew clean test`：成功。
+- 默认 Profile 不加载真实身份源配置，可继续本地启动和测试。
+- `oauth2` Profile 可加载显式 OAuth2/OIDC 注册占位配置。
+- 未测试真实 Keycloak 登录：当前环境未提供 Realm、Client Secret 或可达身份源。
+- Access Token 与 Refresh Token 未暴露给前端。
 
-当前使用 HTTP Basic 与 Spring Boot 自动 In-Memory 用户，仅用于 Step 3 验证，不是生产认证方案。
+本 Step 未实现服务端 Redis Session、令牌刷新、并发刷新、OIDC Logout 或下游 Token Relay。
 
 ## 下一步
 
-经确认后进入 **Step 4 — OAuth2 & OIDC Integration**，接入 Mock IdP 或配置占位的企业 Keycloak。
+经确认后进入 **Step 5 — Session Management**。

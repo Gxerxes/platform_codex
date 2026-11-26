@@ -2,6 +2,7 @@ package com.palette.bff.security;
 
 import java.util.List;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.palette.bff.error.ApiProblem;
 import com.palette.bff.observability.CorrelationIdFilter;
 import jakarta.servlet.http.HttpServletRequest;
@@ -82,7 +83,7 @@ public class PaletteSecurityConfig {
         response.setStatus(status.value());
         response.setContentType(MediaType.APPLICATION_PROBLEM_JSON_VALUE);
         response.setCharacterEncoding("UTF-8");
-        response.getWriter().write(new com.fasterxml.jackson.databind.ObjectMapper()
+        response.getWriter().write(new ObjectMapper()
                 .findAndRegisterModules()
                 .writeValueAsString(ApiProblem.of(status, title, detail, correlationId)));
     }

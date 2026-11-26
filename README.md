@@ -7,9 +7,9 @@ Palette 是面向 HKEX PTS 部门内部业务开发团队的企业级应用开�
 
 ## 当前阶段
 
-当前处于 **Step 3 — Spring Security Foundation**，已完成本地安全过滤链、公开与受保护端点、CSRF、CORS、安全响应头及 401/403 映射。
+当前处于 **Step 4 — OAuth2 & OIDC Integration**，已完成 Keycloak/OIDC 配置占位、用户映射与登录处理骨架。
 
-> Step 3 已完成：Spring Security 6 基础可验证。OAuth2/OIDC、Keycloak、服务端 Session 和下游集成尚未实现。
+> Step 4 已完成配置骨架和 Mock 映射测试。真实 Keycloak 登录需要外部 Realm、Issuer、Client ID 和 Secret；Session、令牌刷新与退出在后续 Step 实现。
 
 ## 文档导航
 

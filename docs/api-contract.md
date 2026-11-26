@@ -50,6 +50,27 @@
 - `POST /api/auth/logout`：本地及 OIDC 退出候选接口。
 - `GET /api/auth/session`：返回脱敏的认证状态，不暴露令牌。
 
+## 认证接口（Step 4 已实现骨架）
+
+### GET /api/auth/session
+
+返回脱敏认证状态，不暴露令牌：
+
+```json
+{
+  "authenticated": true,
+  "subject": "keycloak-user-id",
+  "preferredUsername": "palette.user"
+}
+```
+
+### OAuth2/OIDC 端点
+
+仅启用 `oauth2` Profile 时可用：
+
+- `GET /oauth2/authorization/keycloak`
+- `GET /login/oauth2/code/keycloak`
+
 ## 候选受控代理接口
 
 形式待确认，原则上禁止任意目标参数：
