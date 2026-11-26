@@ -26,3 +26,7 @@ logging:
 
 palette:
   application-name: ${PALETTE_APPLICATION_NAME:palette-bff}
+  security:
+    cors:
+      allowed-origins:
+        - "http://localhost:3000"
