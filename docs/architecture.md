@@ -18,7 +18,7 @@ Palette BFF 不承载业务领域逻辑，也不替代公司级 API Gateway。
 flowchart LR
     U[内部用户] -->|HTTPS + Secure Cookie| UI[业务前端 / Palette UI Framework]
     UI -->|同站 API 请求| BFF[Palette BFF]
-    BFF -->|Authorization Code + OIDC| IDP[企业身份提供商 eIDP]
+    BFF -->|Authorization Code + OIDC| IDP[Keycloak eIDP]
     IDP -->|OIDC Tokens / Claims| BFF
     BFF -->|受控 API 请求| GW[公司 API Gateway]
     GW -->|路由与企业策略| DS1[下游业务服务 A]
@@ -31,7 +31,7 @@ flowchart LR
 
 - BFF 内部：认证流程、Session、令牌、受控代理、公共平台能力。
 - 下游和 Gateway 外部：业务领域逻辑、网关限流、企业策略和数据所有权。
-- 企业 IdP 外部：身份真实性、用户目录、账号和角色信息。
+- 企业 IdP 外部：身份真实性、用户目录、账号和角色信息由 Keycloak 或企业目录提供。
 
 ## 3. 推荐逻辑架构
 
@@ -95,7 +95,7 @@ sequenceDiagram
     actor User as 用户
     participant UI as 浏览器/前端
     participant BFF as Palette BFF
-    participant IDP as 企业 eIDP
+    participant IDP as Keycloak eIDP
     participant GW as API Gateway
 
     User->>UI: 访问受保护页面

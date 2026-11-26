@@ -2,7 +2,7 @@
 
 ## 状态
 
-已采纳（Step 0 架构约束），等待企业标准版本最终确认。
+已采纳。Java 21 已确认；Spring Boot 3、Spring Security 6 与 Gradle 具体兼容版本将在 Step 1 初始化时选择并记录。
 
 ## 背景
 

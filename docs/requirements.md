@@ -25,7 +25,9 @@ Palette BFF 位于浏览器、企业身份源、API Gateway 和业务下游服�
 
 ## 4. 非功能需求
 
-- Java 21 与企业批准的 Spring Boot 3 版本。
+- 企业身份提供商：Keycloak（OIDC）；具体 Realm、Issuer、Client 与回调地址使用占位配置。
+- 兼容 Java 21 的企业批准 Spring Boot 3 与 Spring Security 6 版本在 Step 1 初始化时选定并锁定。
+- Gradle 版本由 Gradle Wrapper 固定，版本选择应兼容 Java 21 与企业标准。
 - Gradle Kotlin DSL 与 Wrapper 可复现构建。
 - 无敏感令牌或密钥暴露给浏览器、日志或配置仓库。
 - 支持水平扩展的分布式 Session 设计，Redis 为按需选项。
@@ -33,7 +35,7 @@ Palette BFF 位于浏览器、企业身份源、API Gateway 和业务下游服�
 - 兼容现有企业网络、代理、证书和身份源配置。
 - 所有外部依赖通过 Mock/Stub 或配置占位符可测试。
 
-## 5. 明确不在 MVP 范围
+## 5. 明确不在 MVP范 围
 
 - 业务领域逻辑。
 - 替代 API Gateway 的流量策略或通用防护。

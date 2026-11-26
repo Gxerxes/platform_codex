@@ -15,6 +15,12 @@
 - 建立初始 Gradle 技术路线和项目目录建议。
 - 创建初始需求、架构、安全、路线图、API、接入文档和 ADR。
 
+## 已确认
+
+- Java 21 已确认为项目运行基线。
+- 企业身份源已确认为 Keycloak。
+- 构建工具已确认使用 Gradle Kotlin DSL 与 Gradle Wrapper。
+
 ## 验证结果
 
 - 未执行编译、测试或启动验证：Step 0 不编写代码。
@@ -23,8 +29,8 @@
 
 ## 待确认问题
 
-- Java 21 和 Spring Boot 3 的企业批准版本。
-- eIDP 类型、配置端点和回调约束。
+- Spring Boot 3、Spring Security 6 与 Gradle 的具体企业批准版本。
+- Keycloak Realm、Issuer、Client ID、回调地址及企业配置端点。
 - API Gateway 与 BFF 是否共同部署，及其职责边界。
 - 部署平台和会话存储方式。
 - 目标下游服务发现机制。
