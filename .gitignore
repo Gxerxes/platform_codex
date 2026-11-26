@@ -1,0 +1,13 @@
+HELP.md
+.gradle/
+build/
+out/
+*.iml
+.idea/
+.vscode/
+.DS_Store
+*.log
+.env
+application-local.yml
+application-local.yaml
+application-local.properties

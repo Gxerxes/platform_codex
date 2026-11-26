@@ -44,6 +44,12 @@ gradlew.bat bootRun
 - 外部仓库凭据通过环境变量或企业秘密管理提供。
 - 测试、构建和运行使用同一 Java Toolchain 目标。
 
-## 未初始化提示
+## 项目初始化状态
 
-当前仓库尚未包含 Gradle Wrapper、Spring Boot 源码或可运行应用。完成 Step 0 确认后再进入 Step 1 初始化。
+Step 1 已初始化 Spring Boot 3 与 Gradle Kotlin DSL 项目骨架。可直接运行：
+
+```bash
+./gradlew bootRun
+```
+
+Hello API 位于 `GET /api/hello`，健康端点位于 `/actuator/health`。

@@ -7,7 +7,9 @@ Palette 是面向 HKEX PTS 部门内部业务开发团队的企业级应用开�
 
 ## 当前阶段
 
-当前处于 **Step 0 — Requirement Analysis & Architecture Design**，仅进行架构设计，不实现代码。
+当前处于 **Step 1 — Project Initialization**，已初始化 Java 21、Spring Boot 3、Gradle Kotlin DSL 项目骨架。
+
+> Step 1 已完成：项目可编译、测试、打包并启动。认证、Session 和下游集成从 Step 2 开始按流程实施。
 
 ## 文档导航
 
@@ -37,5 +39,3 @@ Palette 后端统一使用 **Gradle Kotlin DSL 与 Gradle Wrapper**。实现阶�
 ```
 
 Windows 环境使用 `gradlew.bat`。
-
-> 当前仓库尚未初始化 Gradle 项目或 Java 源码。
